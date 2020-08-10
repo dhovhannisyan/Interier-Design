@@ -1,0 +1,13 @@
+@mixin flex($items-horizotal-dir) {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    @if $items-horizotal-dir == left {
+       justify-content: flex-start;
+    } @else if $items-horizotal-dir == center {
+        justify-content: center;
+    } @else if $items-horizotal-dir == right {
+        justify-content: flex-end;
+    }
+}
