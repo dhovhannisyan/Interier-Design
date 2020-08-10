@@ -1,4 +1,5 @@
-@import "./partials/reset";
+@import "./partials/default";
+@import "./partials/variables";
 @import "./partials/mixins";
 @import "./partials/breakpoints";
 
@@ -11,12 +12,18 @@ html {
 
     .page {
         min-height: 100%;
+
+        .logo {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
     
         &__header {
             @include flex(left);
             height: 4.5rem;
             padding: .5rem 1rem;
-            background-color: #f44336;
+            background-color: $main-color;
             color: white;
     
             .nav-toggle-btn {
@@ -49,15 +56,42 @@ html {
                 }
                 
             }
-    
+           
+            @include lg() {
+                display: none;
+            }
+        }
+
+        &__sidebar {
+            width: 20rem;
+            height: 100vh;
+            padding: .5rem 1rem;
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: $main-color;
+            color: white;
+
             .logo {
-                color: white;
-                font-size: 1.6rem;
-                // display: block;
+                padding: 4.5rem 1rem;
+                white-space: pre-line;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 0.9rem 1rem;
+                font-weight: bold;
+                font-size: 1.08rem;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
             }
 
             @include lg() {
-                display: none;
+                display: block;
             }
         }
     }
