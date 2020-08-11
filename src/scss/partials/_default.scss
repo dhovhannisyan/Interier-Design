@@ -19,6 +19,10 @@ button {
     cursor: pointer;
 }
 
+button:focus, button:active {
+    outline: none;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
