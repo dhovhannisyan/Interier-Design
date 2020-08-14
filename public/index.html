@@ -38,12 +38,12 @@
         <section id="showcase">
             <h2>Showcase.</h2>
             <ul class="showcase-list">
-                <li class="showcase-list__item"><img src="" alt=""></li>
-                <li class="showcase-list__item"><img src="" alt=""></li>
-                <li class="showcase-list__item"><img src="" alt=""></li>
-                <li class="showcase-list__item"><img src="" alt=""></li>
-                <li class="showcase-list__item"><img src="" alt=""></li>
-                <li class="showcase-list__item"><img src="" alt=""></li>
+                <li class="showcase-list__item"><img src="./img/kitchenconcrete.jpg" alt="Kitchen"></li>
+                <li class="showcase-list__item"><img src="./img/atrium.jpg" alt="Atrium"></li>
+                <li class="showcase-list__item"><img src="./img/livingroom.jpg" alt="Livingroom"></li>
+                <li class="showcase-list__item"><img src="./img/bedroom.jpg" alt="Bedroom"></li>
+                <li class="showcase-list__item"><img src="./img/diningroom.jpg" alt="Diningroom"></li>
+                <li class="showcase-list__item"><img src="./img/livingroom2.jpg" alt="Livingroom"></li>
             </ul>
         </section>
         <section id="services">
@@ -51,7 +51,7 @@
             <p>
                 We are a interior design service that focus on what's best for your home and what's best for you!
             </p>
-            <p>
+            <p class="text">
                 Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing 
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
@@ -66,7 +66,7 @@
             <p>
                 The best team in the world.
             </p>
-            <p>
+            <p class="text">
                 We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
@@ -78,26 +78,41 @@
             <ul class="designer-list">
                 <li class="designer-list__item">
                     <div class="designer">
-                        <img src="" alt="" class="designer__img">
-                        <h3 class="designer__name"></h3>
-                        <p class="designer__possition"></p>
-                        <p class="designer__description"></p>
+                        <img src="./img/team2.jpg" alt="John Doe" class="designer__img">
+                        <div class="designer__wrapper">
+                            <h3 class="designer__name">John Doe</h3>
+                            <p class="designer__possition">CEO & Founder</p>
+                            <p class="designer__description">
+                                Phasellus eget enim eu lectus faucibus vestibulum. 
+                                Suspendisse sodales pellentesque elementum.
+                            </p>
+                        </div>
                     </div>
                 </li>
                 <li class="designer-list__item">
                     <div class="designer">
-                        <img src="" alt="" class="designer__img">
-                        <h3 class="designer__name"></h3>
-                        <p class="designer__possition"></p>
-                        <p class="designer__description"></p>
+                        <img src="./img/team1.jpg" alt="Jane Doe" class="designer__img">
+                        <div class="designer__wrapper">
+                            <h3 class="designer__name">Jane Doe</h3>
+                            <p class="designer__possition">Designer</p>
+                            <p class="designer__description">
+                                Phasellus eget enim eu lectus faucibus vestibulum. 
+                                Suspendisse sodales pellentesque elementum.
+                            </p>
+                        </div>
                     </div>
                 </li>
                 <li class="designer-list__item">
                     <div class="designer">
-                        <img src="" alt="" class="designer__img">
-                        <h3 class="designer__name"></h3>
-                        <p class="designer__possition"></p>
-                        <p class="designer__description"></p>
+                        <img src="./img/team3.jpg" alt="Mike Ross" class="designer__img">
+                        <div class="designer__wrapper">
+                            <h3 class="designer__name">Mike Ross</h3>
+                            <p class="designer__possition">Architect</p>
+                            <p class="designer__description">
+                                Phasellus eget enim eu lectus faucibus vestibulum. 
+                                Suspendisse sodales pellentesque elementum.
+                            </p>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -111,7 +126,7 @@
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure
             </p>
             <ul class="package-list">
-                <li class="package-list__item">
+                <li class="package-list__item package-list__item--basic">
                     <div class="package">
                         <h3 class="package__title">Basic</h3>
                         <p>Floorplanning</p>
@@ -123,10 +138,12 @@
                             <b>$ 199</b>
                             <span>per room</span>
                         </div>
-                        <button>Sign Up</button>
+                        <div class="sign-up">
+                            <button>Sign Up</button>
+                        </div>
                     </div>
                 </li>
-                <li class="package-list__item">
+                <li class="package-list__item package-list__item--pro">
                     <div class="package">
                         <h3 class="package__title">Pro</h3>
                         <p>Floorplanning</p>
@@ -138,7 +155,9 @@
                             <b>$ 249</b>
                             <span>per room</span>
                         </div>
-                        <button>Sign Up</button>
+                        <div class="sign-up">
+                            <button>Sign Up</button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -149,17 +168,17 @@
                 Do you want us to style your home? Fill out the form and fill me in with 
                 the details :) We love meeting new people!
             </p>
-            <form class="contact-form">
+            <form class="contact-form" autocomplete="off">
                 <div class="input-field">
                     <label for="contact-name">Name</label>
                     <input type="text" name="name" id="contact-name">
                 </div>
                 <div class="input-field">
-                    <label for="contact-email"></label>
+                    <label for="contact-email">Email</label>
                     <input type="email" name="email" id="contact-email">
                 </div>
                 <div class="input-field">
-                    <label for="contact-message"></label>
+                    <label for="contact-message">Message</label>
                     <input type="text" name="message" id="contact-message">
                 </div>
                 <button type="submit">Send Message</button>

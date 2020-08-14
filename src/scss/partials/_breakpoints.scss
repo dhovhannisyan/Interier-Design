@@ -5,19 +5,19 @@
 }
 
 @mixin sm-screen() {
-    @media screen and (min-width: 321px) and (max-width: 576px) {
+    @media screen and (min-width: 321px) {
         @content;
     }
 }
 
 @mixin md-screen() {
-    @media screen and (min-width: 576px) and (max-width: 992px) {
+    @media screen and (min-width: 776px) {
         @content;
     }
 }
 
 @mixin lg-screen() {
-    @media screen and (min-width: 992px) and (max-width: 1200px) {
+    @media screen and (min-width: 992px) {
         @content;
     }
 }
