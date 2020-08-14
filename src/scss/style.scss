@@ -359,7 +359,20 @@ html {
                 }
             }
         }
+
+        &__footer {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            padding-bottom: 4rem;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
     }
+
+
+
+
+
 
 
     @include sm-screen {
