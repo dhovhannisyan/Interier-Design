@@ -320,6 +320,44 @@ html {
 
                 }
             }
+
+            #contact {
+
+                .contact-form {
+                    margin-top: 1.5rem;
+
+                    .input-field {
+                        margin-bottom: 1rem;
+
+                        label {
+                            display: block;
+                            margin-bottom: .5rem;
+                        }
+
+                        input {
+                            display: block;
+                            width: 100%;
+                            font-size: 1.4rem;
+                            padding: .5rem;
+                        }
+                    }
+
+                    button[type="submit"] {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        padding: 1rem 0;
+                        color: white;
+                        background-color: $main-color;
+
+                        &:hover {
+                            color: black;
+                            background-color: #ccc;
+                        }
+
+                    }
+                }
+            }
         }
     }
 
