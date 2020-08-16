@@ -9,6 +9,7 @@ html {
     font-family: Verdana,sans-serif;
     font-size: 15px;
     line-height: 1.5;
+    scroll-behavior: smooth;
 
     .page {
         min-height: 100%;
@@ -24,7 +25,7 @@ html {
             right: 0;
             bottom: 0;
             background-color: rgba(0,0,0,0.5);
-            z-index: 1;
+            z-index: 2;
             cursor: pointer;
         }
 
@@ -42,6 +43,11 @@ html {
             @include flex(left);
             height: 4.5rem;
             padding: .5rem 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
             background-color: $main-color;
             color: white;
     
@@ -83,7 +89,7 @@ html {
             padding: .5rem 1rem;
             display: none;
             position: fixed;
-            z-index: 2;
+            z-index: 3;
             left: 0;
             top: 0;
             background-color: $main-color;
@@ -126,36 +132,55 @@ html {
         }
 
         &__content {
-            padding: 0 2rem;
+            margin-top: 3.4rem;
+            padding: 0 1.5rem;
 
             h1 {
-                font-size: 4.1rem;
-                margin-top: 2rem;
+                font-size: 3rem;
+                margin-top: 6rem;
+
+                @include sm-screen {
+                    margin-top: 6rem;
+                    font-size: 4.1rem;
+                }
+
+                @include md-screen {
+                    margin-top: 8rem;
+                }
+
             }
 
             section {
-                margin-top: 2rem;
-            }
+                padding-top: 4.5rem;
 
-            h2 {
-                font-size: 3.1rem;
-                color: $main-color;
-                margin-bottom: 2rem;
+                h2 {
+                    font-size: 2.5rem;
+                    color: $main-color;
+                    margin-bottom: 2rem;
+    
+                    &::after {
+                        content: "";
+                        height: .4rem;
+                        width: 3.5rem;
+                        display: block;
+                        background-color: $main-color;
+                        border-radius: 4px;
+                        margin-top: 0.5rem;
+                        margin-bottom: 1rem;
+                    }
 
-                &::after {
-                    content: "";
-                    height: .5rem;
-                    width: 4.5rem;
-                    display: block;
-                    background-color: $main-color;
-                    border-radius: 4px;
-                    margin-top: 1.5rem;
-                    margin-bottom: 1.5rem;
+                    @include sm-screen {
+                        font-size: 3.5rem;
+                        margin-bottom: 4rem;
+                    }
                 }
+
+                
+
+
             }
 
             #showcase {
-                margin-top: 4rem; 
 
                 .showcase-list {
                     display: flex;
@@ -165,21 +190,34 @@ html {
                     flex-wrap: wrap;
                     flex-grow: 1;
                     flex-shrink: 0;
+
+                    &__item {
+                        margin-bottom: 1.5rem;
+                        line-height: 0;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        @include md-screen {
+                            &:nth-child(odd) {
+                                padding-right: 0.75rem;
+                            } 
+
+                            &:nth-child(even) {
+                                padding-left: 0.75rem;
+                            } 
+                        }
+                    }
                 }
 
-                .showcase-list__item {
-                    margin-bottom: 1rem;
-                    line-height: 0;
-                }
+                
 
-                img {
-                    width: 100%;
-                    height: auto;
-                }
+                
             }
 
             #services {
-                margin-top: 6rem;
 
                 .text {
                     margin-top: 1.5rem;
@@ -187,7 +225,6 @@ html {
             }
 
             #designers {
-                margin-top: 6rem; 
 
                 .text {
                     margin-top: 1.5rem;
@@ -202,7 +239,7 @@ html {
                     display: block;
 
                     &__item {
-                        margin-bottom: 1rem;
+                        margin-bottom: 1.5rem;
 
                         .designer {
                             background-color: #f1f1f1;
@@ -229,18 +266,42 @@ html {
                             
                         }
 
+                        @include md-screen {
+                           flex-grow: 1;
+
+                           &:nth-child(2) {
+                               margin: 0 1.5rem;
+                           }
+                        }
+
+                    }
+
+                    @include md-screen {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
                     }
                 }
             }
 
             #packages {
                 .package-list {
-                    margin-top: 1rem;
+                    display: block;
+                    margin-top: 1.5rem;
 
                     &__item {
                         background-color: #f1f1f1;
 
                         .package {
+
+                            &__title {
+                                text-align: center;
+                                padding: 1.8rem 0;
+                                color: white;
+                                font-size: 1.4rem;
+                                font-weight: bold;
+                            }
+
                             &__price {
                                 b {
                                     display: block;
@@ -263,12 +324,12 @@ html {
     
                             .sign-up {
                                 text-align: center;
-                                padding: 1.5rem 0;
+                                padding: 1.2rem 0;
     
                                 button {
                                     display: inline-block;
                                     padding: 1rem 2rem;
-                                    font-size: 1.4rem;
+                                    font-size: 1.2rem;
                                 }
                             }
                         }
@@ -276,7 +337,7 @@ html {
                         
                         
                         &--basic {
-                            margin-bottom: 1rem;
+                            margin-bottom: 1.5rem;
 
                             .package {
                                 &__title {
@@ -307,15 +368,19 @@ html {
                             }
                         }
 
-                        .package {
-                            &__title {
-                                text-align: center;
-                                padding: 2.2rem 0;
-                                color: white;
-                                font-size: 1.4rem;
-                                font-weight: bold;
+                        @include md-screen {
+                            flex-grow: 1;
+    
+                            &:nth-child(1) {
+                                margin-right: 1.5rem;
                             }
                         }
+                    }
+
+                    @include md-screen {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
                     }
 
                 }
@@ -361,11 +426,19 @@ html {
         }
 
         &__footer {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            padding-bottom: 4rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
             background-color: #f1f1f1;
-            text-align: center;
+            text-align: right;
+
+            @include md-screen {
+                margin-top: 4rem;
+                padding-top: 3rem;
+                padding-bottom: 4rem;
+                padding-right: 4rem;
+            }
         }
     }
 

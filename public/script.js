@@ -25,3 +25,9 @@ overlay.addEventListener('click', e => {
     closeSidebar();
 });
 
+sidebar.addEventListener('click', e => {
+    if(e.target.className.includes('nav-link')) {
+        closeSidebar();
+    }
+});
+
